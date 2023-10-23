@@ -4,4 +4,4 @@ fs.appendFileSync("bio.txt","this is in video 6");
 const readed = fs.readFileSync("bio.txt");
 console.log(readed.toString());
 fs.renameSync("bio.txt","mybio.txt");
-fs.rm("mybio.txt");
+fs.rmSync("mybio.txt");
