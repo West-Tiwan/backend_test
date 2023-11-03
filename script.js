@@ -1,8 +1,7 @@
-const fs = require("fs");
-fs.writeFileSync("bio.txt","test from thapa technical ");
-fs.appendFileSync("bio.txt","this is in video 6");
-const readed = fs.readFile("bio.txt","UTF-8",(err,data)=>{
-    console.log(data);
+const http = require("http");
+const server = http.createServer((req,res)=>{
+    res.end("hello from the other side");
 });
-fs.renameSync("bio.txt","mybio.txt");
-fs.rmSync("mybio.txt");
+server.listen(3000,"127.0.0.1",()=>{
+    console.log("listening on port 3000");
+});
