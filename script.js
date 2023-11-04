@@ -10,6 +10,9 @@ const server = http.createServer((req,res)=>{
     else if(req.url=="/contact"){
         res.end("hello from /contact");
     }
+    else if(req.url=="/api"){
+        res.end("hello from /api");
+    }
     else{
         res.writeHead(404,{"Content-type":"text/html"})
         res.end("<h1>404 error page</h1>");
