@@ -1,5 +1,6 @@
 const http = require("http");
 const url = require("url");
+const fs = require("fs");
 const server = http.createServer((req,res)=>{
     if(req.url=="/"){
         res.end("hello from /");
@@ -11,6 +12,9 @@ const server = http.createServer((req,res)=>{
         res.end("hello from /contact");
     }
     else if(req.url=="/api"){
+        fs.readFile(`${__dirname}/user.json`,"utf-8",(err,data)=>{
+            console.log(data);
+        });
         res.end("hello from /api");
     }
     else{
