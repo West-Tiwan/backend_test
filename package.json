@@ -15,6 +15,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "deamon": "^1.0.0",
+    "ejs": "^3.1.9",
     "express": "^4.19.1"
   }
 }
