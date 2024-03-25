@@ -2,9 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "testing",
-  "main": "script.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev" : "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -13,8 +14,6 @@
   "author": "West-Tiwan",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.4.0",
-    "deamon": "^1.0.0",
     "ejs": "^3.1.9",
     "express": "^4.19.1"
   }
