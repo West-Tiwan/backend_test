@@ -1,7 +1,19 @@
-import express from "express";
-import path from "path";
-
+const express = require("express");
+const path = require("path");
+const mongoose = require("mongoose");
+const {Collection, Schema} = mongoose;
 const app = express();
+mongoose.connect("mongodb://localhost:27017", {dbName: "backend"}).then(console.log("DB connected")).catch((e) => {
+    console.log("error occured : " + e)
+})
+
+const formSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    phone_no: Number,
+})
+
+const reply = mongoose.Collection("Replies", formSchema)
 
 app.use(express.static(path.join(path.resolve(), "public")))
 app.use(express.urlencoded({extended: true}));
