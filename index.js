@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     console.log(req.body.name);
     console.log(req.body.email);
-    console.log(req.body.no);
+    console.log(req.body.number);
     res.redirect("/");
 });
 
