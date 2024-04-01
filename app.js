@@ -23,8 +23,7 @@ app.get("/users/all", async (req, res) => {
     res.json({
         success: true,
         users
-    })
-    res.end();
+    });
 });
 
 app.listen(3000, () => {
