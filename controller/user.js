@@ -5,7 +5,7 @@ export const helloWorld = (req, res) => {
 };
 
 export const createUser = async (req, res) => {
-    const {name, email} = req.body;
+    const {name, email} = req.params;
 
     const createdItem = await User.create({
         name, email
@@ -30,7 +30,7 @@ export const getUserByID = async (req, res) => {
 };
 
 export const getAllUsers = async (req, res) => {
-    const users = await User.find();
+    const users = await User.find({});
 
     res.json({
         success: true,

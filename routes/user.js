@@ -6,8 +6,8 @@ router.get("/", helloWorld);
 
 router.get("/reg", createUser);
 
-router.get("/:id", getUserByID);
-
 router.get("/all", getAllUsers);
+
+router.get("/:id", getUserByID);
 
 export default router;
