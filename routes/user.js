@@ -6,7 +6,7 @@ router.get("/", (req, res) => {
     res.send("Hello World");
 });
 
-router.get("/user/reg", async (req, res) => {
+router.get("/reg", async (req, res) => {
     // const users = await User.find();
 
     const {name, email} = req.body;
@@ -22,7 +22,7 @@ router.get("/user/reg", async (req, res) => {
     });
 });
 
-router.get("/user/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
     const {id} = req.params;
 
     const user = await User.findById(id);
@@ -33,7 +33,7 @@ router.get("/user/:id", async (req, res) => {
     });
 });
 
-router.get("/user/all", async (req, res) => {
+router.get("/all", async (req, res) => {
     const users = await User.find();
 
     res.json({
