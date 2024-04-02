@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export const connectDB = async () => {
-    mongoose.connect("mongodb://localhost:27017", {
+    mongoose.connect(process.env.MONGO_URI, {
         dbName: "backend",
     }).then(r => {
         console.log("Connected to MongoDB")
