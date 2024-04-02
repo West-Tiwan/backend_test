@@ -36,6 +36,17 @@ app.get("/user/reg", async (req, res) => {
     });
 });
 
+app.get("/user/:id", async (req, res) => {
+    const {id} = req.params;
+
+    const user = await User.findById(id);
+
+    res.json({
+        success: true,
+        data: user,
+    });
+});
+
 app.get("/user/all", async (req, res) => {
     const users = await User.find();
 
