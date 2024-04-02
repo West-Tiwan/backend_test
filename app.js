@@ -36,6 +36,15 @@ app.get("/user/reg", async (req, res) => {
     });
 });
 
+app.get("/user/all", async (req, res) => {
+    const users = await User.find();
+
+    res.json({
+        success: true,
+        data: users,
+    });
+});
+
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
 });
