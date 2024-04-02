@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 
 const app = express();
 
+app.use(express.json());
+
 mongoose.connect("mongodb://localhost:27017", {
     dbName: "backend",
 });
@@ -18,11 +20,19 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 });
 
-app.get("/users/all", async (req, res) => {
-    const users = await User.find();
+app.get("/user/reg", async (req, res) => {
+    // const users = await User.find();
+
+    const {name, email} = req.body;
+
+    const createdItem = await User.create({
+        name, email
+    });
+
     res.json({
         success: true,
-        users
+        message: "User created successfully",
+        data: createdItem,
     });
 });
 
